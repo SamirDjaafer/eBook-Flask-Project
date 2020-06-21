@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Create an eBook</h1>
+    <div class="container">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Create an eBook</legend>
+            </fieldset>
+            <div class="form-group">
+                {{ form.title.label(class="form-control-label") }}
+                {{ form.title(class="form-control form-control-lg") }}
+            </div>
+            <div class="form-group">
+                {{ form.author.label(class="form-control-label") }}
+                {{ form.author(class="form-control form-control-lg") }}
+            </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+    </div>
+    <!--  Switch to Create eBook page  -->
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Have an eBook in mind? <a href="{{ url_for('search') }}" class="ml-2">Search for one instead</a>
+        </small>
+    </div>
+{% endblock content %}
